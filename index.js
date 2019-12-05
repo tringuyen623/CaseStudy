@@ -111,7 +111,7 @@ const generateQA = () => {
             break;
     }
 
-    let correctPosition = Math.floor(Math.random() * 3 + 1);
+    let correctPosition = Math.floor(Math.random() * 4 + 1);
     document.getElementById(`box${correctPosition}`).innerHTML = correctAnswer;
     let answers = [correctAnswer];
 
