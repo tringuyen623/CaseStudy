@@ -17,7 +17,7 @@ document.getElementById('startReset').onclick = function () {
         timeRemaining = 5;
         document.getElementById('timeRemainingValue').innerHTML = timeRemaining;
         hide('gameOver');
-
+        hide('operators')
         document.getElementById('startReset').innerHTML = 'Reset Game';
 
         startCountDown();
@@ -44,7 +44,6 @@ clickAnswer.addEventListener('click', (e) => {
             }, 1000)
             generateQA();
             timeRemaining = 5;
-
 
         } else {
             stopCountDown();
@@ -88,37 +87,37 @@ const hide = (id) => {
 
 
 const generateQA = () => {
-    let level;
-    if (score <= 10) {
-        level = 1;
-    } else {
-        level = 10;
-    }
-    let x = Math.floor(Math.random() * 10 + level);
-    let y = Math.floor(Math.random() * 10 + level);
+    let x = Math.floor(Math.random() * 10 + 1);
+    let y = Math.floor(Math.random() * 10 + 1);
+    let ops = document.getElementById('operators').value;
+    console.log("TCL: generateQA -> ops", ops)
+    // let opsIndex = Math.floor(Math.random() * ops.length);
 
-    let ops = ['+', '-', 'x', ':'];
-    let opsIndex = Math.floor(Math.random() * ops.length);
-
-    switch (opsIndex) {
-        case 0: document.getElementById('question').innerHTML = `${x} + ${y}`;
+    switch (ops) {
+        case 'plus': document.getElementById('question').innerHTML = `${x} + ${y}`;
             correctAnswer = x + y;
             break;
 
-        case 1: document.getElementById('question').innerHTML = `${x} - ${y}`;
+        case 'minus':
+            do {
+                x = Math.floor(Math.random() * 10 + 1);
+                y = Math.floor(Math.random() * 10 + 1);
+            } while (x < y)
+            document.getElementById('question').innerHTML = `${x} - ${y}`;
             correctAnswer = x - y;
             break;
 
-        case 2: document.getElementById('question').innerHTML = `${x} x ${y}`;
+        case 'multiply': document.getElementById('question').innerHTML = `${x} x ${y}`;
             correctAnswer = x * y;
             break;
 
-        case 3: document.getElementById('question').innerHTML = `${x} : ${y}`;
-            if (x === y) {
-                correctAnswer = (x / y);
-            } else {
-                correctAnswer = (x / y).toFixed(2);
-            }
+        case 'divide':
+            do {
+                x = Math.floor(Math.random() * 10 + 10);
+                y = Math.floor(Math.random() * 10 + 1);
+            } while (x%y !==0 || x < y)
+            document.getElementById('question').innerHTML = `${x} : ${y}`;
+            correctAnswer = x / y;
             break;
     }
 
@@ -132,7 +131,7 @@ const generateQA = () => {
 
             let incorrectAnswer;
             do {
-                incorrectAnswer = (Math.floor(Math.random() * 10 + level)) * (Math.floor(Math.random() * 10 + level));
+                incorrectAnswer = (Math.floor(Math.random() * 10 + 1)) * (Math.floor(Math.random() * 10 + 1));
             } while (answers.indexOf(incorrectAnswer) > -1);
             document.getElementById(`box${i}`).innerHTML = incorrectAnswer;
             answers.push(incorrectAnswer);

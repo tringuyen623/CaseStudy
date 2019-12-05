@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-	<link rel="stylesheet" href="styling.css"></link>
+	<link rel="stylesheet" href="styling.css">
+	</link>
 	<title>Maths Game</title>
 </head>
+
 <body>
 	<div id="container">
 		<div id="score">Score <span id="scoreValue">0</span></div>
-	<div id="correct">Correct</div>
-	<div id="inCorrect">InCorrect</div>
-	<div id="question"></div>
-	<div id="instruction">Click on the correct anwser</div>
-	<div id="choices">
-		<div id="box1" class="box" value = '1'></div>
-		<div id="box2" class="box" value = '2'></div>
-		<div id="box3" class="box" value = '3'></div>
-		<div id="box4" class="box" value = '4'></div>
-	</div>
-	<div id="startReset">Start Game</div>
-	<div id="timeRemaining">Time Remaining <span id="timeRemainingValue"> </span>sec</div>
-	<div id="gameOver"></div>
+		<select id="operators">
+			<optgroup label='Operators'>
+				<option value="plus">Plus &#43;</option>
+				<option value="minus">Minus &#8722;</option>
+				<option value="multiply">Multiply &#215;</option>
+				<option value="divide">Divide &#247;</option>
+		</select>
+		<div id="correct">Correct</div>
+		<div id="inCorrect">InCorrect</div>
+		<div id="question"></div>
+		<div id="instruction">Click on the correct anwser</div>
+		<div id="choices">
+			<div id="box1" class="box" value='1'></div>
+			<div id="box2" class="box" value='2'></div>
+			<div id="box3" class="box" value='3'></div>
+			<div id="box4" class="box" value='4'></div>
+		</div>
+		<div id="startReset">Start Game</div>
+		<div id="timeRemaining">Time Remaining <span id="timeRemainingValue"> </span>sec</div>
+		<div id="gameOver"></div>
 	</div>
 
 	<script src="index.js"></script>
 </body>
+
 </html>

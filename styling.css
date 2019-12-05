@@ -21,6 +21,19 @@ background: radial-gradient(circle, #fff,#ccc);
     left: 720px;
     box-shadow: 0px 4px 0px 0px #9da853;
 }
+#operators{
+    width: 100px;
+    background-color: #F1FF92;
+    color: rgb(168, 13, 2);
+    padding: 10px;
+    position: absolute;
+    left: 10px;
+    border-radius: 10pt;
+    box-shadow: 0px 4px 0px 0px #9da853;
+    display: block;
+    
+}
+
 #correct{
     position: absolute;
     left: 370px;
@@ -71,7 +84,7 @@ background: radial-gradient(circle, #fff,#ccc);
     margin-right: 30px;
     border-radius: 3px;
     cursor: pointer;
-    box-shadow: 0px 4px rgb(0, 0, 0, 0.2);
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
     line-height: 100px;
     position: relative;
@@ -94,7 +107,7 @@ background: radial-gradient(circle, #fff,#ccc);
 #startReset{
     width: 100px;
     padding: 10px;
-    background-color: rgb(255, 255, 255,0.5);
+    background-color: rgba(255, 255, 255,0.5);
     margin: 30px auto;
     border-radius: 3px;
     cursor: pointer;
