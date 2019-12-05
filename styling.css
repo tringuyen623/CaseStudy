@@ -22,7 +22,7 @@ background: radial-gradient(circle, #fff,#ccc);
     box-shadow: 0px 4px 0px 0px #9da853;
 }
 #operators{
-    width: 100px;
+    width: auto;
     background-color: #F1FF92;
     color: rgb(168, 13, 2);
     padding: 10px;
