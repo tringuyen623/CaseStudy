@@ -58,7 +58,7 @@ const startCountDown = () => {
             stopCountDown();
             playing = false;
             show('gameOver');
-            document.getElementById('gameOver').innerHTML = `<p>Kết thúc!</p><p>Điểm của bạn là: ${score}!`;
+            document.getElementById('gameOver').innerHTML = `<p>Kết thúc!</p><p>Điểm của bạn là: ${score}`;
             hide('timeRemaining');
             hide('correct');
             hide('inCorrect');
